@@ -1,10 +1,11 @@
-[workspace]
-members = ["connserver", "enc", "net", "clientcom", "clientcom-c", "servercom"]
-resolver = "2"
+[package]
+name = "voltlane-client"
+version = "0.1.0"
+edition = "2024"
 
-[profile.release-with-debug]
-opt-level = 3
-debug = true
-lto = true
-panic = "abort"
-inherits = "release"
+[dependencies]
+tokio = { version = "1.44.2", features = ["net"] }
+net = { git = "https://github.com/voltlane/common" }
+enc = { git = "https://github.com/voltlane/common" }
+anyhow = "1.0.98"
+tokio-util = { version = "0.7.14", features = ["codec"] }
