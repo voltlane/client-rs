@@ -237,16 +237,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "enc"
-version = "0.1.0"
-source = "git+https://github.com/voltlane/common#860440cb41d43a9326406065e43c3d2bfc77af22"
-dependencies = [
- "chacha20poly1305",
- "k256",
- "zeroize",
-]
-
-[[package]]
 name = "ff"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -466,19 +456,6 @@ dependencies = [
  "libc",
  "wasi",
  "windows-sys",
-]
-
-[[package]]
-name = "net"
-version = "0.1.0"
-source = "git+https://github.com/voltlane/common#860440cb41d43a9326406065e43c3d2bfc77af22"
-dependencies = [
- "anyhow",
- "bincode",
- "futures",
- "tokio",
- "tokio-stream",
- "tokio-util",
 ]
 
 [[package]]
@@ -762,9 +739,34 @@ name = "voltlane-client"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "enc",
- "net",
  "tokio",
+ "tokio-util",
+ "voltlane-enc",
+ "voltlane-net",
+]
+
+[[package]]
+name = "voltlane-enc"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9e764327a0ac330484afa53381e2e858299bdd3f37a48b490e1ba65a9c45bbec"
+dependencies = [
+ "chacha20poly1305",
+ "k256",
+ "zeroize",
+]
+
+[[package]]
+name = "voltlane-net"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f7c5d1a1ab467a1aa3b8efd229457812e8486ce4ec45ad5b1fc49834fc8bcb71"
+dependencies = [
+ "anyhow",
+ "bincode",
+ "futures",
+ "tokio",
+ "tokio-stream",
  "tokio-util",
 ]
 

@@ -1,8 +1,8 @@
 use tokio::net::{tcp::OwnedReadHalf, TcpStream};
 use tokio_util::codec::{FramedRead, LengthDelimitedCodec};
 
-pub use enc;
-pub use net;
+pub use voltlane_enc as enc;
+pub use voltlane_net as net;
 
 pub struct Connection {
     pub read: FramedRead<OwnedReadHalf, LengthDelimitedCodec>,
